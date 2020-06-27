@@ -45,4 +45,4 @@ $ sudo docker rm (sudo docker stop wordpress-db)
 $ sudo docker rm (sudo docker stop wordpress)
 ```
 
-Lab complete.
+Lab complete. Please move on to [Building a custom Docker image](custom-docker-image.md)
