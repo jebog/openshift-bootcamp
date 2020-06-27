@@ -1,0 +1,102 @@
+# Creating a Wordpress Application in OpenShift
+
+In this lab, you'll create a Wordpress application that uses a MySQL back end deployment. We've already seen how to create and expose a simple 1 tier NodeJS deployment, so now we're extending this to a 2 tier Wordpress and MySQL deployment. There will be minimal guidance in this exercise.
+
+The overall design looks as follows
+
+![](img/wordpress-sql-arch.png)
+
+To get started, you can use the following base deployment specifications.
+
+Wordpress
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress
+  labels:
+    app: wordpress
+spec:
+  selector:
+    matchLabels:
+      app: wordpress
+      tier: frontend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: wordpress
+        tier: frontend
+    spec:
+      containers:
+      - image: wordpress:4.8-apache
+        name: wordpress
+        ports:
+        - containerPort: 80
+          name: wordpress
+        volumeMounts:
+        - name: wordpress-persistent-storage
+          mountPath: /var/www/html
+      volumes:
+      - name: wordpress-persistent-storage
+        emptyDir: {}
+```
+
+MySQL
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress-mysql
+  labels:
+    app: wordpress
+spec:
+  selector:
+    matchLabels:
+      app: wordpress
+      tier: mysql
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: wordpress
+        tier: mysql
+    spec:
+      containers:
+      - image: mysql:5.6
+        name: mysql
+        env:
+        ports:
+        - containerPort: 3306
+          name: mysql
+        volumeMounts:
+        - name: mysql-persistent-storage
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: mysql-persistent-storage
+        emptyDir: {}
+```
+
+Hints:
+
+Use a ConfigMap to store the following environment variables
+    - `WORDPRESS_DB_HOST` for the name of the MySQL Service
+    - `MYSQL_USER` for the MySQL user name
+    - `MYSQL_DATABASE` for the MySQL database 
+
+Use a Secret to store the following sensitive information
+    - `WORDPRESS_DB_PASSWORD` for the Wordpress database password
+    - `MYSQL_PASSWORD` for the MySQL user password specified in `MYSQL_USER`
+    - `MYSQL_ROOT_PASSWORD` for the MySQL root user password
+
+Expose both deployments
+
+Create a new route for the wordpress service only.
+
+You'll need to create a few ConfigMaps and secrets, then add them to these deployment files as we did in Lab02.
+
+Once your files are ready to deploy to OpenShift, you can use `oc create -f <filename>` to deploy it within your project.
+
+Lab complete.
