@@ -28,7 +28,7 @@ $ sudo docker run --name wordpress-db -e MYSQL_USER=user -e MYSQL_PASSWORD=passw
 ```
 
 ```
-$ sudo docker run -e WORDPRESS_DB_PASSWORD=password -e WORDPRESS_DB_HOST=wordpress-db:3306 --name wordpress -p 80:80 -v /tmp/wordpress/html:/var/www/html -d --network wordpress-net wordpress
+$ sudo docker run -e WORDPRESS_DB_PASSWORD=passw0rd -e WORDPRESS_DB_HOST=wordpress-db:3306 --name wordpress -p 80:80 -v /tmp/wordpress/html:/var/www/html -d --network wordpress-net wordpress
 ```
 
 Open your browser and go to the IP address of your Student X VM (you can find the IP using the terminal by typing `ifconfig ens33`)
