@@ -102,11 +102,11 @@ Use the following specifications for your application
 
 Use a ConfigMap to store the following environment variables
 - `WORDPRESS_DB_HOST` for the name of the MySQL Service
-- `MYSQL_USER` for the MySQL user name
 - `MYSQL_DATABASE` for the MySQL database 
 
 Use a Secret to store the following sensitive information
 - `WORDPRESS_DB_PASSWORD` for the Wordpress database password
+- `MYSQL_USER` for the MySQL user name
 - `MYSQL_PASSWORD` for the MySQL user password specified in `MYSQL_USER`
 - `MYSQL_ROOT_PASSWORD` for the MySQL root user password
   
