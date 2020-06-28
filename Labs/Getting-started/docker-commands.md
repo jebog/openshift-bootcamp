@@ -30,8 +30,6 @@ Below is a list of sample docker commands to help you through some of the labs
 
 ## Starting and Stopping Containers
 
-The following commands show you how to start and stop processes in a particular container.
-
 `docker start [CONTAINER]` - Start a container
 
 `docker stop [CONTAINER]` - Stop a running container
@@ -45,6 +43,7 @@ The following commands show you how to start and stop processes in a particular 
 ## Docker Image Commands
 
 `docker build [URL]` - Create an image from a Dockerfile
+
 `docker build -t `– builds an image from a Dockerfile in the current directory and tags the image
 
 `docker pull [IMAGE]` - Pull an image from a registry
