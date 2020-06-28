@@ -79,19 +79,31 @@ spec:
         emptyDir: {}
 ```
 
-Hints:
+Use the following specifications for your application
 
 Use a ConfigMap to store the following environment variables
-    - `WORDPRESS_DB_HOST` for the name of the MySQL Service
-    - `MYSQL_USER` for the MySQL user name
-    - `MYSQL_DATABASE` for the MySQL database 
+- `WORDPRESS_DB_HOST` for the name of the MySQL Service
+- `MYSQL_USER` for the MySQL user name
+- `MYSQL_DATABASE` for the MySQL database 
 
 Use a Secret to store the following sensitive information
-    - `WORDPRESS_DB_PASSWORD` for the Wordpress database password
-    - `MYSQL_PASSWORD` for the MySQL user password specified in `MYSQL_USER`
-    - `MYSQL_ROOT_PASSWORD` for the MySQL root user password
+- `WORDPRESS_DB_PASSWORD` for the Wordpress database password
+- `MYSQL_PASSWORD` for the MySQL user password specified in `MYSQL_USER`
+- `MYSQL_ROOT_PASSWORD` for the MySQL root user password
+  
+Use the following resource requests and limits
 
-Expose both deployments
+| | WordPress | MySQL |
+|-| ---|---|
+| CPU request | 100m | 100m |
+| CPU limit | 200m | 200m |
+| Memory request | 128Mi | 256Mi |
+| Memory limit | 256Mi | 256Mi |
+
+Add a nodeSelector to the Wordpress front end to target nodes labelled "apps=frontend"
+Add a nodeSelector to the MySQL back end to target nodes labelled "apps=backend"
+
+Expose the Wordpress front end.
 
 Create a new route for the wordpress service only.
 
