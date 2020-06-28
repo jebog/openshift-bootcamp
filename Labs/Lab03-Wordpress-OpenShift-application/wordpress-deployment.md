@@ -2,6 +2,25 @@
 
 In this lab, you'll create a Wordpress application that uses a MySQL back end deployment. We've already seen how to create and expose a simple 1 tier NodeJS deployment, so now we're extending this to a 2 tier Wordpress and MySQL deployment. There will be minimal guidance in this exercise.
 
+To get started, log into OpenShift using the CLI, as described [here](../Getting-started/log-in-to-openshift.md).
+
+A set of helpful common `oc` commands can be found [here](../Getting-started/oc-commands.md).
+
+Once you're logged in, create a new project for this deployment.
+
+```
+$ oc new-project userXX-lab02-wp-sql
+```
+
+Replace `userXX` with your user ID or other name.
+
+Create a new local directory for this lab, and change to it.
+
+```
+$ mkdir -p Lab02/mariadb
+$ cd Lab02/mariadb
+```
+
 The overall design looks as follows
 
 ![](img/wordpress-sql-arch.png)
@@ -110,5 +129,7 @@ Create a new route for the wordpress service only.
 You'll need to create a few ConfigMaps and secrets, then add them to these deployment files as we did in Lab02.
 
 Once your files are ready to deploy to OpenShift, you can use `oc create -f <filename>` to deploy it within your project.
+
+When finished, remove all of the resources you created and the project.
 
 Lab complete.
