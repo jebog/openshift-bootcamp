@@ -1,4 +1,4 @@
-# Networking Two Containers
+# Exercise 3 - Networking Two Containers
 
 In the previous exercises, we've explored creating single stateless and stateful containers, but that isn't as useful in the real world. This exercise will explore how to create a new docker network and allow two containers to communicate by using a WordPress front end and a MySQL back end.
 

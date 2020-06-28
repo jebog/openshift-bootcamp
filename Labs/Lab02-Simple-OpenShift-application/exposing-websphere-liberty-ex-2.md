@@ -1,4 +1,4 @@
-# Creating and Exposing a WebSphere Liberty OpenShift Application
+# Exercise 2 - Creating and Exposing a WebSphere Liberty OpenShift Application
 
 In this lab, you'll create a simple WebSphere Liberty application Deployment resource and deploy it to OpenShift. The application resource consumption will be limited using the `resources` spec, the application will target a specific node, and the application will be exposed so it is accessible outside of the cluster.
 
@@ -65,7 +65,7 @@ You should now be able to use `oc get` commands to check the resources in the Op
 $ oc get deploy
 NAME                    READY   UP-TO-DATE   AVAILABLE   AGE
 websphere-liberty-app   0/1     1            0           17s
-<additional content>
+
 $ oc get pods
 NAME                                     READY   STATUS              RESTARTS   AGE
 websphere-liberty-app-556bdf88b6-bzn9x   0/1     ContainerCreating   0          15s
@@ -130,6 +130,7 @@ OpenShift should now roll out a new pod with the new resource requests and limit
 $ oc get pods
 NAME                                     READY   STATUS    RESTARTS   AGE
 websphere-liberty-app-66c9f5db46-rz7tt   1/1     Running   0          76s
+
 $ oc describe pods websphere-liberty-app-66c9f5db46-rz7tt
 <additional content>
 Containers:

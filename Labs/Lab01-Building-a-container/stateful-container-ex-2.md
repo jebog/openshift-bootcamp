@@ -1,4 +1,4 @@
-## Deploying a Stateful Container
+# Exercise 2 - Deploying a Stateful Container
 ​
 Creat a new directory to use save the content of the database we're going to populate
 ​

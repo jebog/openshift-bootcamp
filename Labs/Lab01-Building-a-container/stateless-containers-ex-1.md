@@ -1,4 +1,4 @@
-## Deploying stateless container
+# Exercise 1 - Deploying stateless container
 
 In this lab, you'll create a simple Apache container and connect to it from your local machine.
 ​

@@ -1,4 +1,4 @@
-# Creating an OpenShift Application with ConfigMaps and Secrets
+# Exercise 1 - Creating an OpenShift Application with ConfigMaps and Secrets
 
 In this lab, you'll create a simple application Deployment resource and deploy it to OpenShift.
 

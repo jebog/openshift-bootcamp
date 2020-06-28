@@ -1,4 +1,4 @@
-# Building a Customer Docker Image
+# Exercise 4 - Building a Customer Docker Image
 
 In this exercise, you'll create a simple Python application image from source code built locally.
 

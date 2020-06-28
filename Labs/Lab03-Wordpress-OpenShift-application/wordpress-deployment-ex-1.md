@@ -1,6 +1,6 @@
-# Creating a Wordpress Application in OpenShift
+# Exercise 1 - Creating a Wordpress Application in OpenShift
 
-In this lab, you'll create a Wordpress application that uses a MySQL back end deployment. We've already seen how to create and expose a simple 1 tier NodeJS deployment, so now we're extending this to a 2 tier Wordpress and MySQL deployment. There will be minimal guidance in this exercise.
+In this lab, you'll create a Wordpress application that uses a MySQL back end deployment. We've already seen how to create and expose a simple 1 tier deployment, so now we're extending this to a 2 tier Wordpress and MySQL application. There will be minimal guidance in this exercise, as it is designed to test your knowledge thus far.
 
 To get started, log into OpenShift using the CLI, as described [here](../Getting-started/log-in-to-openshift.md).
 
@@ -9,7 +9,7 @@ A set of helpful common `oc` commands can be found [here](../Getting-started/oc-
 Once you're logged in, create a new project for this deployment.
 
 ```
-$ oc new-project userXX-lab02-wp-sql
+$ oc new-project userXX-lab03-wp-sql
 ```
 
 Replace `userXX` with your user ID or other name.
