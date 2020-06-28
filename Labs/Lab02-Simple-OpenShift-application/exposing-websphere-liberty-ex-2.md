@@ -47,11 +47,6 @@ spec:
         volumeMounts:
           - mountPath: "/config/dropins"
             name: was-persistence
-        envFrom:
-          - configMapRef:
-              name: ws-config
-          - secretRef:
-              name: ws-secret
       volumes:
         - name: was-persistence
           emptyDir: {}
