@@ -3,109 +3,66 @@
 Below is a list of sample docker commands to help you through some of the labs
 
 ## Listing Docker Resources
-```
-docker ps - lists all the running containers
-docker ps -a - lists all the running and exited containers
-docker images - lists all the images
-docker volume ls - lists all the volumes
-docker network ls - lists all the networks
-```
+
+`docker ps` - lists all the running containers
+
+`docker ps -a` - lists all the running and exited containers
+
+`docker images` - lists all the images
+
+`docker volume ls` - lists all the volumes
+
+`docker network ls` - lists all the networks
+
 
 ## Run a command in a new container:
-```
-docker run [IMAGE] [COMMAND]
 
-docker run --rm [IMAGE] – removes a container after it exits.
+`docker run [IMAGE] [COMMAND]`
 
-docker run -td [IMAGE] – starts a container and keeps it running.
+`docker run --rm [IMAGE]` – removes a container after it exits.
 
-docker run -it [IMAGE] – starts a container, allocates a pseudo-TTY connected to the container’s stdin, and creates an interactive bash shell in the container.
+`docker run -td [IMAGE]` – starts a container and keeps it running.
 
-docker run -it-rm [IMAGE] – creates, starts, and runs a command inside the container. Once it executes the command, the container is removed.
-```
+`docker run -it [IMAGE]` – starts a container, allocates a pseudo-TTY connected to the container’s stdin, and creates an interactive bash shell in the container.
+
+`docker run -it-rm [IMAGE]` – creates, starts, and runs a command inside the container. Once it executes the command, the container is removed.
+
 
 ## Starting and Stopping Containers
 
 The following commands show you how to start and stop processes in a particular container.
 
-Start a container:
-```
-docker start [CONTAINER]
-```
+`docker start [CONTAINER]` - Start a container
 
-Stop a running container:
-```
-docker stop [CONTAINER]
-```
+`docker stop [CONTAINER]` - Stop a running container
 
-Stop a running container and start it up again:
-```
-docker restart [CONTAINER]
-```
+`docker restart [CONTAINER]` - Stop a running container and start it up again
 
-Delete a container (if it is not running):
-```
-docker rm [CONTAINER]
-```
+`docker rm [CONTAINER]` - Delete a container (if it is not running)
 
-Kill a container by sending a SIGKILL to a running container:
-```
-docker kill [CONTAINER]
-```
+`docker kill [CONTAINER]` - Kill a container by sending a SIGKILL to a running container
 
 ## Docker Image Commands
 
-Below you fill find all the necessary commands for working with Docker images.
+`docker build [URL]` - Create an image from a Dockerfile
+`docker build -t `– builds an image from a Dockerfile in the current directory and tags the image
 
-Create an image from a Dockerfile:
-```
-docker build [URL]
-docker build -t – builds an image from a Dockerfile in the current directory and tags the image
-```
+`docker pull [IMAGE]` - Pull an image from a registry
 
-Pull an image from a registry:
-```
-docker pull [IMAGE]
-```
+`docker push [IMAGE]` - Push an image to a registry
 
-Push an image to a registry:
-```
-docker push [IMAGE]
-```
+`docker rmi [IMAGE]` - Remove an image
 
-Create an image from a tarball:
-```
-docker rmi [IMAGE]
-```
+`docker load [TAR_FILE/STDIN_FILE]` - Load an image from a tar archive or stdin
 
-Load an image from a tar archive or stdin:
-```
-docker load [TAR_FILE/STDIN_FILE]
-```
-
-Save an image to a tar archive, streamed to STDOUT with all parent layers, tags, and versions:
-```
-docker save [IMAGE] > [TAR_FILE]
-```
+`docker save [IMAGE] > [TAR_FILE]` - Save an image to a tar archive, streamed to STDOUT with all parent layers, tags, and versions
 
 ## Debugging containers
 
-List the logs from a running container:
-```
-docker logs [CONTAINER]
-```
+`docker logs [CONTAINER]` - List the logs from a running container
 
-List low-level information on Docker objects:
-```
-docker inspect [OBJECT_NAME/ID]
-```
+`docker inspect [OBJECT_NAME/ID]` - List low-level information on Docker objects
 
-List real-time events from a container:
-```
-docker events [CONTAINER]
-```
+`docker events [CONTAINER]` - List real-time events from a container
 
-Show running processes in a container:
-```
-docker top [CONTAINER]
-```
+`docker top [CONTAINER]` - Show running processes in a container
