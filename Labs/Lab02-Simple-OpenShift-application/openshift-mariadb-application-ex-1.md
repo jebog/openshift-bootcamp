@@ -360,7 +360,7 @@ When complete, delete the resources created, and delete the project.
 $ oc delete deployment/mariadb configmap/mariadb-config secret/mariadb-root-password secret/mariadb-user-creds
 deployment.extensions "mariadb" deleted
 configmap "mariadb-config" deleted
-secret "mariadb-root-passwordd" deleted
+secret "mariadb-root-password" deleted
 secret "mariadb-user-creds" deleted
 
 $ oc delete project userXX-lab02-mariadb
