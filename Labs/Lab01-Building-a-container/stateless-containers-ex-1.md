@@ -46,4 +46,4 @@ httpd-lab
 ​
 Now deploy the Apache container again and you will see that the changes you made earlier are no longer present.
 
-Lab complete. Please move on to [Creating a Stateful Container](stateful-container.md)
+Lab complete. Please move on to [Creating a Stateful Container](stateful-container-ex-2.md)

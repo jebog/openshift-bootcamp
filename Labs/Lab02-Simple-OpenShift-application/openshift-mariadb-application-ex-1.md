@@ -367,4 +367,4 @@ $ oc delete project userXX-lab02-mariadb
 project.project.openshift.io "userXX-lab02-mariadb" deleted
 ```
 
-Lab complete. Please move on to [Exposing a WebSphere Liberty application](exposing-websphere-liberty.md)
+Lab complete. Please move on to [Exposing a WebSphere Liberty application](exposing-websphere-liberty-ex-2.md)

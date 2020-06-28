@@ -17,7 +17,7 @@ Replace `userXX` with your user ID or other name.
 Create a new local directory for this lab, and change to it.
 
 ```
-$ mkdir Lab02/was
+$ mkdir -p Lab02/was
 $ cd Lab02/was
 ```
 

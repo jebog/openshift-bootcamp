@@ -118,4 +118,4 @@ Remove the data in `/tmp/mysql`
 $ rm -rf /tmp/mysql
 ```
 
-Lab complete. Please move on to [Networking Containers](networking-containers.md)
+Lab complete. Please move on to [Networking Containers](networking-containers-ex-3.md)

@@ -41,8 +41,8 @@ Continue to set up the wordpress application until you get to the dashboard. At 
 
 ## Clean up
 ```
-$ sudo docker rm (sudo docker stop wordpress-db)
-$ sudo docker rm (sudo docker stop wordpress)
+$ sudo docker rm $(sudo docker stop wordpress-db)
+$ sudo docker rm $(sudo docker stop wordpress)
 ```
 
-Lab complete. Please move on to [Building a custom Docker image](custom-docker-image.md)
+Lab complete. Please move on to [Building a custom Docker image](custom-docker-image-ex-4.md)
