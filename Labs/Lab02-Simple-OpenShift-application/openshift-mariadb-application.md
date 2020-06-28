@@ -330,7 +330,7 @@ mariadb-7c4c64f8ff-2dx2k   0/1     Terminating   0          11m
 We should now have a working mariadb deployment
 
 ```
-$ oc get deploy
+$ oc get deployment
 NAME      READY   UP-TO-DATE   AVAILABLE   AGE
 mariadb   1/1     1            1           13m
 ```
@@ -357,10 +357,10 @@ mypassw0rd=mypassw0rd
 When complete, delete the resources created, and delete the project.
 
 ```
-$ oc delete deployment/mariadb configmap/mariadb-config secret/mariadb-root-pass secret/mariadb-user-creds
+$ oc delete deployment/mariadb configmap/mariadb-config secret/mariadb-root-password secret/mariadb-user-creds
 deployment.extensions "mariadb" deleted
 configmap "mariadb-config" deleted
-secret "mariadb-root-pass" deleted
+secret "mariadb-root-passwordd" deleted
 secret "mariadb-user-creds" deleted
 
 $ oc delete project userXX-lab02-mariadb
