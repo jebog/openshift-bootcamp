@@ -357,13 +357,12 @@ mypassw0rd=mypassw0rd
 When complete, delete the resources created, and delete the project.
 
 ```
-$ oc delete deployment mariadb
+$ oc delete deployment/mariadb configmap/mariadb-config secret/mariadb-root-pass secret/mariadb-user-creds
 deployment.extensions "mariadb" deleted
-$ oc delete configmap mariadb-config
 configmap "mariadb-config" deleted
-$ oc delete secret mariadb-root-pass mariadb-user-creds
 secret "mariadb-root-pass" deleted
 secret "mariadb-user-creds" deleted
+
 $ oc delete project userXX-lab02-mariadb
 project.project.openshift.io "userXX-lab02-mariadb" deleted
 ```

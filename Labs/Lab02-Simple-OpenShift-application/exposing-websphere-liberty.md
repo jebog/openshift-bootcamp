@@ -286,4 +286,16 @@ websphere-liberty   websphere-liberty-was-test.apps.ocp4.os.fyre.ibm.com        
 
 In your web browser, navigate to the URL given in the HOST/PORT section. This should bring up the WebSphere landing page.
 
+When you're finished, clean up the resources.
+
+```
+$ oc delete deployment/websphere-liberty-app  service/websphere-liberty route/websphere-liberty
+service "websphere-liberty" deleted
+route.route.openshift.io "websphere-liberty" deleted
+deployments.extensions "websphere-liberty-app" deleted
+
+$ oc delete project userXX-lab02-was
+project.project.openshift.io "userXX-lab02-was" deleted
+```
+
 Lab complete.
