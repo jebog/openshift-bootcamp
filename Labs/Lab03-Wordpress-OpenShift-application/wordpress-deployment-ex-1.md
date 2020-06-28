@@ -117,7 +117,7 @@ Use the following resource requests and limits
 | CPU request | 100m | 100m |
 | CPU limit | 200m | 200m |
 | Memory request | 128Mi | 256Mi |
-| Memory limit | 256Mi | 256Mi |
+| Memory limit | 256Mi | 512Mi |
 
 Add a nodeSelector to the Wordpress front end to target nodes labelled "apps=frontend"
 Add a nodeSelector to the MySQL back end to target nodes labelled "apps=backend"
@@ -129,6 +129,12 @@ Create a new route for the wordpress service only.
 You'll need to create a few ConfigMaps and secrets, then add them to these deployment files as we did in Lab02.
 
 Once your files are ready to deploy to OpenShift, you can use `oc create -f <filename>` to deploy it within your project.
+
+You will need to apply the `anyuid` Security Context Constraint (SCC) to your project to allow the Wordpress container to work correctly. Security Context Constraints will be covered in a later lab. To add the `anyuid` SCC to your project, run the following command
+
+```
+$ oc adm policy add-scc-to-user anyuid -z default
+```
 
 When finished, remove all of the resources you created and the project.
 
