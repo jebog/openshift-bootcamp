@@ -3,6 +3,7 @@
 Open the Student X VM window and log in with the following credentials
 
 User: ibmdemo
+
 Password: passw0rd
 
 # Using the OpenShift Console
