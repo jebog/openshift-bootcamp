@@ -9,7 +9,7 @@ If you have cloned the entire `openshift-bootcamp` Git repo, change directory to
 To build the image, run the following
 
 ```
-$ docker build -t my-python .
+$ sudo docker build -t my-python .
 ```
 
 The docker image should start building, and it will be available in the list of docker images
@@ -35,7 +35,7 @@ The container should now be running at port 80, so check it by entering your loc
 Stop and remove the `my-python` container
 
 ```
-$ docker rm $(docker stop my-python)
+$ sudo docker rm $(docker stop my-python)
 ```
 
 As the Docker image was built from the Dockerfile that used an environment variable, we can customise this when running the container.
