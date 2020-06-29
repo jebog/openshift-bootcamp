@@ -6,7 +6,7 @@ Ex 1 - [Stateless containers](stateless-containers-ex-1.md)
 
 Ex 2 - [Stateful containers](stateful-containers-ex-2.md)
 
-Ex 3 - [Networking containers](networking-containers-ex-3.md)
+Ex 3 - [Networking containers](networking-container-ex-3.md)
 
 Ex 4 - [Custom Docker image](custom-docker-image-ex-4.md)
 
