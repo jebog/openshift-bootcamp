@@ -130,11 +130,13 @@ You'll need to create a few ConfigMaps and secrets, then add them to these deplo
 
 Once your files are ready to deploy to OpenShift, you can use `oc create -f <filename>` to deploy it within your project.
 
-You will need to apply the `anyuid` Security Context Constraint (SCC) to your project to allow the Wordpress container to work correctly. Security Context Constraints will be covered in a later lab. To add the `anyuid` SCC to your project, run the following command
+You will need to apply the `anyuid` Security Context Constraint (SCC) to your project to allow the Wordpress container to work correctly. Security Context Constraints will be covered in a later lab. To add the `anyuid` SCC to your project, you would run the following command
 
 ```
 $ oc adm policy add-scc-to-user anyuid -z default
 ```
+
+Ask your system administrator to do this for you, providing the project name
 
 When finished, remove all of the resources you created and the project.
 

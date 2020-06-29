@@ -56,12 +56,13 @@ service/web-svc created
 
 Prior to deploying Nginx, it requires additional permissions to run. By default, all pods inherit the `restricted` Security Context Constraint (SCC). To enable the Nginx pods to use additional privileges required, we need to assign the `default` Service Account the `anyuid` Security Context Constraint. This subject will be covered in more depth in a later lab.
 
-To enable the use of the `anyuid` SCC, run the following command
+To enable the use of the `anyuid` SCC, you would run the following command
 
 ```
 oc adm policy add-scc-to-user anyuid -z default
-securitycontextconstraints.security.openshift.io/anyuid added to: ["system:serviceaccount:user99-lab05-dynamic-pvc-sts:default"]
 ```
+
+Ask your system administrator to do this for you.
 
 Next we need to deploy the StatefulSet. Below is the definition for a 3-replica Nginx web application. With the use of the `volumeClaimTemplates`, we can define specific storage requirements for the pods. It also means that each pod in the StatefulSet will create it's own indexed Persistent Volume Claim using the dynamic provisioner we created earlier. 
 
