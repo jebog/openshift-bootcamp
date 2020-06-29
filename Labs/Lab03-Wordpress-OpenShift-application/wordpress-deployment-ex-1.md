@@ -17,8 +17,8 @@ Replace `userXX` with your user ID or other name.
 Create a new local directory for this lab, and change to it.
 
 ```
-$ mkdir -p Lab02/mariadb
-$ cd Lab02/mariadb
+$ mkdir -p Lab03/wp-sql
+$ cd Lab03/wp-sql
 ```
 
 The overall design looks as follows
