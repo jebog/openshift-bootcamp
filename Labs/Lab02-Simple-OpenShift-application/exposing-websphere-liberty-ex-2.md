@@ -177,14 +177,14 @@ NAME                                     READY   STATUS    RESTARTS   AGE    IP 
 websphere-liberty-app-66c9f5db46-rz7tt   1/1     Running   0          8m3s   10.254.15.122   worker1   <none>           <none>
 ```
 
-It's currently running on worker1, since we haven't told the OpenShift Scheduler where we want it to run. So now we'll edit the application to run only on nodes will the label `apps=was`.
+It's currently running on worker1, since we haven't told the OpenShift Scheduler where we want it to run. So now we'll edit the application to run only on nodes will the label `app=was`.
 
 Edit the `websphere-liberty-app` Deployment to add the below snippet to the `spec.template.spec.containers` field. 
 
 
 ```
 nodeSelector:
-  apps: was
+  app: was
 ```
 
 The `nodeSelector` should start in-line with the `volumes` section, as given below
@@ -204,7 +204,7 @@ spec:
       - name: websphere-liberty-app
 <additional content>
       nodeSelector:
-        apps: was
+        app: was
       volumes:
         - name: was-persistence
           emptyDir: {}
@@ -212,12 +212,12 @@ spec:
 
 Save and close the editor.
 ​
-After some time, the pod should be moved to the nodes labelled with `apps=was`.
+After some time, the pod should be moved to the nodes labelled with `app=was`.
 
 ```
 $ oc get pods -o wide
 NAME                                    READY   STATUS    RESTARTS   AGE   IP            NODE                           NOMINATED NODE   READINESS GATES
-websphere-liberty-app-b5679d7f8-4hhq4   1/1     Running   0          53s   10.254.0.33   worker2   <none>           <none>
+websphere-liberty-app-b5679d7f8-4hhq4   1/1     Running   0          53s   10.254.0.33   worker2                        <none>           <none>
 ```
 
 Now the application is successfully running where we want it. In some cases, however, it is not always ths smooth. A common scenario is that a node's resources can become totally consumed by many applications, and the scheduler can no longer schedule new workloads to that node until resources are freed. In that case, the following message is given when describing a `Pending` pod
