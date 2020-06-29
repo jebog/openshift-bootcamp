@@ -15,7 +15,7 @@ $ sudo docker build -t my-python .
 The docker image should start building, and it will be available in the list of docker images
 
 ```
-$ docker images my-python
+$ sudo docker images my-python
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 my-python           latest              44c13412dac4        47 seconds ago      131MB
 ```
